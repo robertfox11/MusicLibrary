@@ -1,0 +1,28 @@
+{
+  "name": "proyect-music",
+  "version": "1.0.0",
+  "description": "\"Music Library Itunes\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "music library itune"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertfox11/MusicLibrary.git"
+  },
+  "keywords": [
+    "music",
+    "library",
+    "itune"
+  ],
+  "author": "Robert Salazar Arias <11rsahome@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robertfox11/MusicLibrary/issues"
+  },
+  "homepage": "https://github.com/robertfox11/MusicLibrary#readme",
+  "dependencies": {
+    "eslint": "^6.7.2",
+    "jquery": "^3.4.1"
+  }
+}
