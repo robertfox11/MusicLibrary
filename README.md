@@ -1,6 +1,8 @@
-# Project Title
+# Music Library
 
-One Paragraph of project description goes here
+1.	Consiste en una sola página que actualiza su contenido dinámicamente.
+2.	Realice consultas de búsqueda en la API de búsqueda de iTunes cada vez que cambie el campo de búsqueda.
+
 
 ## Getting Started
 
@@ -10,9 +12,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
-Give examples
-```
+Necesitamos npm para crear node modules instalando tambien librerias como jquery que vamos a necesitar
+Se crea de la siguiente manera 
+npm -init
+npm install jquery
 
 ### Installing
 
