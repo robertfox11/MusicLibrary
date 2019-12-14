@@ -6,16 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
     <title>MusicLibrary</title>
 </head>
 
 <body>
     <h1 class="text-xl-center">Peticiones Ajax</h1>
     <button type="button" id="ajax" class="btn btn-primary">Ajax</button>
-    <div id="load"></div>
+    <div id="load">
+
+    </div>
+    <!-- <form action="https://itunes.apple.com/search?term=" method="POST" id="form"> -->
+    Buscador:<input type="text" name="name" id="autocomplete">
+    <!-- </form> -->
+    <button id="boton-usuarios">Obtener usuarios</button>
+
+    <div id="lista-usuarios"></div>
+    <label for="tags">Tags: </label>
+    <input id="tags" type="text" name="name">
+
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="assets/js/Songs.js"></script>
     <script src="assets/js/prueba.js"></script>
+
 </body>
 
 </html>
