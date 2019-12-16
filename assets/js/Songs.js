@@ -28,21 +28,34 @@ class Songs {
             success: function(response) {
                 console.log(response)
 
-                var listaUsuarios = $("#lista-usuarios");
+                var listaUsuarios = $("#list-search");
 
                 $.each(response.results, function(index, element) {
-                    var song = new Songs(element['artistId'], element['artworkUrl30'], element['trackName'], element['artistName'], element['collectionName'], element['trackPrice'], element['releaseDate'], element['trackTimeMillis'], element['primaryGenreName'], element['previewUrl'], element['trackViewUrl'])
+                    var song = new Songs(element['artistId'], element['artworkUrl100'], element['trackName'], element['artistName'], element['collectionName'], element['trackPrice'], element['releaseDate'], element['trackTimeMillis'], element['primaryGenreName'], element['previewUrl'], element['trackViewUrl'])
                     listaUsuarios.append(
+                        '<div class="mb-4 card-desk col-md-4 text-center">' +
+                        '<div class="mb-1 card shadow-sm">' +
+                        '<div class="card-header">' +
+                        '<h2 class="my-0 font-weight-bold">' + song.artistNames + '</h2>' +
+                        '</div>' +
+                        '<div class="card-body">' +
+                        '<img src=' + song.caratula + ' class="imgSearch"></img>' +
+                        '<h4 class="mb-1">' + song.albumNames +
+                        '</h4>' +
+                        '<h6 class="mb-1">' + song.songsNames +
+                        '</h6>' + '<span class="card-title mx-auto stock"> price €/' + song.songsPrices + '</span>' +
+                        '<h5 class="list-unstyled mt-3 mb-4">' + song.musicGener + '</h5>' +
+                        '<h5 class="list-unstyled mt-3 mb-4">' + song.releaseDate + '</h5>' +
+                        '<p class="list-unstyled mt-3 mb-4"> Timer ' + song.songLength + '</p>' +
+                        '<a  class="badge badge-primary" data-id=' + song.id + 'href=' + song.linkSongs + ' target=_blank>link</a>' +
+                        '<audio id="mireproductor" src=' + song.audioSong + '></audio>' +
                         '<div>' +
-                        '<p>' + song.artistNames + ' ' + song.songsNames + '</p>' +
-                        '<p>' + 'TrackID ' + song.id + '</p>' +
-                        '<img src=' + song.caratula + '></img>' +
-                        '<p>"Album" ' + song.albumNames + ' price ' + song.songsPrices + '</p>' +
-                        '<p>"Date" ' + song.releaseDate + ' time ' + song.songLength + '</p>' +
-                        '<p>"Genero" ' + song.musicGener + ' time ' + song.musicGener + '</p>' +
-                        '<a href=' + song.linkSongs + ' target=_blank>Link </a>' +
-                        '<audio src=' + song.audioSong + '></audio>' +
+
+                        '</div> ' +
+                        '</div>' +
+                        '</div>' +
                         '</div>'
+
                     );
                 });
             },

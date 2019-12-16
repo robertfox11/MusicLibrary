@@ -2,3 +2,12 @@
     color: rgba(255, 255, 255, .5)!important;
     font-size: 50px;
 }
+
+.imgSearch {
+    vertical-align: middle;
+    border-style: none;
+    width: 130px;
+    height: 150px;
+    border: 1px solid cadetblue;
+    border-radius: 7px;
+}
