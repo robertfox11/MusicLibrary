@@ -26,7 +26,7 @@ class Album {
                 var listaSearch = $("#list-search");
 
                 $.each(response.results, function(index, element) {
-                    var album = new Album(element['trackId'], element['artworkUrl100'], element['collectionName'], element['artistName'], element['collectionPrice'], element['trackCount'], element['releaseDate'], element['primaryGenreName'])
+                    var album = new Album(element['artistId'], element['artworkUrl100'], element['collectionName'], element['artistName'], element['collectionPrice'], element['trackCount'], element['releaseDate'], element['primaryGenreName'])
                     listaSearch.append(
                         '<div class="mb-4 card-desk col-md-4 text-center">' +
                         '<div class="mb-1 card shadow-sm">' +

@@ -23,7 +23,7 @@ class Songs {
             type: 'GET',
             dataType: 'jsonp',
             url: "https://itunes.apple.com/search?term=" + tags.val(),
-            // data: tags,
+            data: tags,
             success: function(response) {
                 console.log(response)
 
