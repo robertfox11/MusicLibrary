@@ -18,7 +18,7 @@ class Album {
         $.ajax({
             type: 'GET',
             dataType: 'jsonp',
-            url: "https://itunes.apple.com/search?term=" + tags.val(),
+            url: "https://itunes.apple.com/search?term=" + tags.val() + "&entity=album",
             data: tags,
             success: function(response) {
                 console.log(response)
