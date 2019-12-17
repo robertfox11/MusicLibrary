@@ -5,6 +5,6 @@ $(document).ready(function() {
 
     $("#btn-search").on("click", function() {
         // songs.getSongNAmes()
-        artist.getArtist();
+        // artist.getArtist();
     });
 });
