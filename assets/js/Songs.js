@@ -21,7 +21,7 @@ class Songs {
         let link = 'https://www.apple.com/itunes/link/';
         $.ajax({
             type: 'GET',
-            dataType: 'jsonp',
+            dataType: 'json',
             url: "https://itunes.apple.com/search?term=" + tags.val(),
             data: tags,
             success: function(response) {

@@ -13,7 +13,7 @@ class Artist {
         // console.log(tags.value)
         $.ajax({
             type: 'GET',
-            dataType: 'jsonp',
+            dataType: 'json',
             url: "https://itunes.apple.com/search?term=" + tags.val() + "&entity=musicArtist",
             data: tags,
             success: function(response) {

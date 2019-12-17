@@ -20,7 +20,7 @@ class Video {
         $.ajax({
             type: 'GET',
             dataType: 'jsonp',
-            url: "https://itunes.apple.com/search?term=" + tags.val() + "&entity=musicVideo",
+            url: "https://itunes.apple.com/search?term=" + tags.val() + "&media=musicVideo",
             data: tags,
             success: function(response) {
                 console.log(response)
