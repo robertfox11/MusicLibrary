@@ -1,11 +1,12 @@
-export class Artist {
-    constructor(id, nameArtis, musicGener, linkGener) {
+class Artist {
+    constructor(id, caratula, nameArtis, musicGener, linkGener) {
         this.id = id;
+        this.caratula = caratula;
         this.nameArtis = nameArtis;
         this.musicGener = musicGener;
         this.linkGener = linkGener;
     }
-    getArtis() {
+    getArtist() {
         var tags = $('#autocomplete');
         console.log(tags.val())
         let cors = 'https://cors-anywhere.herokuapp.com';
@@ -22,58 +23,23 @@ export class Artist {
                 var listaSearch = $("#list-search");
 
                 $.each(response.results, function(index, element) {
-                    var song = new Songs(element['trackId'], element['artistName'], element['primaryGenreName'], element['trackViewUrl'])
+                    var artist = new Artist(element['trackId'], element['artworkUrl100'], element['artistName'], element['primaryGenreName'], element['trackViewUrl'])
                     listaSearch.append(
                         '<div class="mb-4 card-desk col-md-4 text-center">' +
                         '<div class="mb-1 card shadow-sm">' +
                         '<div class="card-header">' +
-                        '<h2 class="my-0 font-weight-bold">' + song.artistNames + '</h2>' +
+                        '<h2 class="my-0 font-weight-bold">' + artist.nameArtis + '</h2>' +
                         '</div>' +
                         '<div class="card-body">' +
-                        '<img src=' + song.caratula + ' class="imgSearch"></img>' +
-                        '<h4 class="mb-1">' + song.musicGener +
+                        '<img src=' + artist.caratula + ' class="imgSearch"></img>' +
+                        '<h4 class="mb-1">' + artist.musicGener +
                         '</h4>' +
-                        '<p>' + song.id + '</p>' +
-                        '<a  class="badge badge-primary" data-id=' + song.id + ' ' + 'href=' + song.linkSongs + ' target=_blank>link</a>' +
-                        '<audio id=' + 'play' + song.id + ' ' + 'src=' + song.audioSong + '></audio>' +
-                        '<div>' +
-                        '<button id=' + 'btnPlay' + song.id + ' ' + ' submit="submit" >play</button>' +
-                        '<button id=' + 'btnPause' + song.id + ' ' + 'submit="submit">pause</button>' +
-                        '<button id=' + 'btnStop' + song.id + ' ' + 'submit="submit">Stop</button>' +
-                        '</div> ' +
+                        '<p>' + artist.id + '</p>' +
+                        '<a  class="badge badge-primary" data-id=' + artist.id + ' ' + 'href=' + artist.linkGener + ' target=_blank>link</a>' +
                         '</div>' +
                         '</div>' +
                         '</div>'
                     );
-
-                    var btnPlay = document.querySelectorAll('#btnPlay' + song.id);
-                    console.log(btnPlay)
-                    var btnPause = document.querySelectorAll('#btnPause' + song.id);
-                    var btnStop = document.querySelectorAll('#btnStop' + song.id);
-                    var _audio = document.querySelectorAll('#play' + song.id);
-                    console.log(btnStop)
-
-                    btnPlay.forEach(function(index) {
-                        index.addEventListener('click', function() {
-                            _audio.forEach(function(params) {
-                                params.play();
-                            })
-                        })
-                    })
-                    btnPause.forEach(function(index) {
-                        index.addEventListener('click', function() {
-                            _audio.forEach(function(params) {
-                                params.pause();
-                            })
-                        })
-                    })
-                    btnStop.forEach(function(index) {
-                        index.addEventListener('click', function() {
-                            _audio.forEach(function(params) {
-                                params.load;
-                            })
-                        })
-                    })
                 });
             },
             error: function() {
