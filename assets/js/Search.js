@@ -1,105 +1,116 @@
 function showResults(response, entity) {
     var results = $("#list-search");
     results.empty();
-    //si es albul, si es song
-    if (entity == 'song') {
-        $.each(response, function(index, element) {
-            // var album = new Album(element['artistId'], element['artworkUrl100'], element['collectionName'], element['artistName'], element['collectionPrice'], element['trackCount'], element['releaseDate'], element['primaryGenreNae'])
+
+    $.each(response, function(index, element) {
+
+        if (entity == 'song') {
+            // console.log(response[index])
             results.append(
                 '<div class="mb-4 card-desk col-md-4 text-center">' +
                 '<div class="mb-1 card shadow-sm">' +
                 '<div class="card-header">' +
-                '<h2 class="my-0 font-weight-bold">' + element.artistName + '</h2>' +
+                '<h2 class="my-0 font-weight-bold">' + response[index].artistName + '</h2>' +
                 '</div>' +
                 '<div class="card-body">' +
-                '<img src=' + element.artworkUrl100 + ' class="imgSearch"></img>' +
+                '<img src=' + response[index].cover + ' class="imgSearch"></img>' +
                 '<ul class="list-group list-group-flush">' +
-                '<li class="list-group-item">' + element.collectionName + '</li>' +
-                '<li class="list-group-item">Num Songs' + element.trackCount + '</li>' +
-                '<li class="list-group-item">' + element.releaseDate + '</li>' +
+                '<li class="list-group-item">' + response[index].nameSongs + '</li>' +
+                '<li class="list-group-item">Num Songs' + response[index].trackCount + '</li>' +
+                '<li class="list-group-item">' + response[index].releaseDate + '</li>' +
                 '</ul>' +
-                '<h4 class="mb-1">' + element.primaryGenreName +
+                '<h4 class="mb-1">' + response[index].musicGner +
                 '</h4>' +
-                '<p>' + element.trackId + '</p>' +
-                '<h4 class="mb-1"> Price Album €' + element.collectionPrice +
+                '<p>' + response[index].songLength + '</p>' +
+                '<p>' + response[index].linkSong + '</p>' +
+                '<h4 class="mb-1"> Price Music €' + response[index].songsPrice +
+                '</h4>' +
+                '<a  class="badge badge-primary" href=' + response[index].linkSong + ' ' + 'target=_blank>link</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            );
+        }
+    });
+
+
+    $.each(response, function(index, element) {
+        // var artist = new Artist(element.artistName, element.primaryGenreName, element.artistLinkUrl)
+        if (entity == 'musicArtist') {
+            // console.log(response[index])
+            results.append(
+                '<div class="mb-4 card-desk col-md-4 text-center">' +
+                '<div class="mb-1 card shadow-sm">' +
+                '<div class="card-header">' +
+                '<h2 class="my-0 font-weight-bold">' + response[index].nameArtis + '</h2>' +
+                '</div>' +
+                '<div class="card-body">' +
+                '<h4 class="mb-1">' + response[index].musicGener +
+                '</h4>' +
+                '<a  class="badge badge-primary" data-id=' + response[index].artistId + ' ' + 'href=' + response[index].linkGener + ' target=_blank>link</a>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            );
+        }
+    });
+
+
+    $.each(response, function(index, element) {
+
+        if (entity == 'album') {
+            // console.log(response[index])
+            results.append(
+                '<div class="mb-4 card-desk col-md-4 text-center">' +
+                '<div class="mb-1 card shadow-sm">' +
+                '<div class="card-header">' +
+                '<h2 class="my-0 font-weight-bold">' + response[index].nameArtist + '</h2>' +
+                '</div>' +
+                '<div class="card-body">' +
+                '<img src=' + response[index].cover + ' class="imgSearch"></img>' +
+                '<ul class="list-group list-group-flush">' +
+                // '<li class="list-group-item">' + response[index].nameAlbum + '</li>' +
+                '<li class="list-group-item">Num Songs' + response[index].nameAlbum + '</li>' +
+                '<li class="list-group-item">' + response[index].releaseDate + '</li>' +
+                '</ul>' +
+                '<h4 class="mb-1">' + response[index].generMusic +
+                '</h4>' +
+                '<p> number songs ' + response[index].numSongs + '</p>' +
+                '<h4 class="mb-1"> Price Album €' + response[index].priceAlbum +
                 '</h4>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
             );
-        });
-    }
-    if (entity == 'musicArtist') {
-        $.each(response, function(index, element) {
-            // var album = new Album(element['artistId'], element['artworkUrl100'], element['collectionName'], element['artistName'], element['collectionPrice'], element['trackCount'], element['releaseDate'], element['primaryGenreNa    e'])
+        }
+    });
+
+
+    $.each(response, function(index, element) {
+        if (entity == 'musicVideo') {
+            console.log(response[index])
             results.append(
                 '<div class="mb-4 card-desk col-md-4 text-center">' +
                 '<div class="mb-1 card shadow-sm">' +
                 '<div class="card-header">' +
-                '<h2 class="my-0 font-weight-bold">' + element.artistName + '</h2>' +
+                '<h2 class="my-0 font-weight-bold">' + response[index].artistName + '</h2>' +
                 '</div>' +
                 '<div class="card-body">' +
-                '<h4 class="mb-1">' + element.primaryGenreName +
-                '</h4>' +
-                '<a  class="badge badge-primary" data-id=' + element.artistId + ' ' + 'href=' + element.artistLinkUrl + ' target=_blank>link</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>'
-            );
-        });
-    }
-    if (entity == 'album') {
-        $.each(response, function(index, element) {
-            // var album = new Album(element['artistId'], element['artworkUrl100'], element['collectionName'], element['artistName'], element['collectionPrice'], element['trackCount'], element['releaseDate'], element['primaryGenreNa    e'])
-            results.append(
-                '<div class="mb-4 card-desk col-md-4 text-center">' +
-                '<div class="mb-1 card shadow-sm">' +
-                '<div class="card-header">' +
-                '<h2 class="my-0 font-weight-bold">' + element.artistName + '</h2>' +
-                '</div>' +
-                '<div class="card-body">' +
-                '<img src=' + element.artworkUrl100 + ' class="imgSearch"></img>' +
+                '<img src=' + response[index].cover + ' class="imgSearch"></img>' +
                 '<ul class="list-group list-group-flush">' +
-                '<li class="list-group-item">' + element.collectionName + '</li>' +
-                '<li class="list-group-item">Num Songs' + element.numSongs + '</li>' +
-                '<li class="list-group-item">' + element.releaseDate + '</li>' +
+                '<li class="list-group-item">' + response[index].nameSongs + '</li>' +
+                '<li class="list-group-item">Time Songs' + response[index].songLength + '</li>' +
+                '<li class="list-group-item">' + response[index].releaseDate + '</li>' +
                 '</ul>' +
-                '<h4 class="mb-1">' + element.primaryGenreName +
+                '<h4 class="mb-1">' + response[index].musicGner +
                 '</h4>' +
-                '<p>' + element.trackCount + '</p>' +
-                '<h4 class="mb-1"> Price Album €' + element.collectionPrice +
-                '</h4>' +
-                '</div>' +
-                '</div>' +
-                '</div>'
-            );
-        });
-    }
-    if (entity == 'musicVideo') {
-        $.each(response, function(index, element) {
-            results.append(
-                '<div class="mb-4 card-desk col-md-4 text-center">' +
-                '<div class="mb-1 card shadow-sm">' +
-                '<div class="card-header">' +
-                '<h2 class="my-0 font-weight-bold">' + element.artistName + '</h2>' +
-                '</div>' +
-                '<div class="card-body">' +
-                '<img src=' + element.artworkUrl100 + ' class="imgSearch"></img>' +
-                '<ul class="list-group list-group-flush">' +
-                '<li class="list-group-item">' + element.trackName + '</li>' +
-                '<li class="list-group-item">Time Songs' + element.trackTimeMillis + '</li>' +
-                '<li class="list-group-item">' + element.releaseDate + '</li>' +
-                '</ul>' +
-                '<h4 class="mb-1">' + element.primaryGenreName +
-                '</h4>' +
-                '<p>' + element.trackId + '</p>' +
-                '<a  class="badge badge-primary" data-id=' + element.trackId + ' ' + 'href=' + element.trackViewUrl + ' target=_blank>link</a>' +
-                '<h4 class="mb-1"> Price Video €' + element.trackPrice +
+                '<a  class="badge badge-primary" href=' + response[index].linkMusiVideo + ' target=_blank>link</a>' +
+                '<h4 class="mb-1"> Price Video €' + response[index].songsPrice +
                 '</h4>' +
                 '<div class="embed-responsive embed-responsive-1by1">' +
                 '<video controls>' +
-                '<source controls id=' + 'video' + element.trackId + ' ' + 'src=' + element.previewUrl + ' ' + 'type="video/m4v">' +
-                '<source controls id=' + 'video' + element.trackId + ' ' + 'src=' + element.previewUrl + ' ' + 'type="video/webm">' +
+                '<source controls id=' + 'video src=' + response[index].clipVideo + ' ' + 'type="video/m4v">' +
+                '<source controls id=' + 'video src=' + response[index].clipVideo + ' ' + 'type="video/webm">' +
                 '</video>' +
                 '</div>' +
                 '</div>' +
@@ -107,10 +118,6 @@ function showResults(response, entity) {
                 '</div>'
 
             );
-        })
-    }
-}
-
-function song(params) {
-
+        }
+    })
 }
