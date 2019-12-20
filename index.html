@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="robots" content="nofollow" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all"> s
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css" media="all">
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>MusicLibrary</title>
 </head>
 
-<body>
-    <header>
+<body class="d-flex flex-column ">
+    <header class="d-flex flex-grow-0">
         <div class="container">
             <nav class="navbar navbar-light bg-dark justify-content-between">
                 <div class=" text-lg-center ">
@@ -23,30 +23,84 @@
                     <div class="input-group ml-3">
                         <select class="custom-select" id="inputGroupSelect01">
                             <option value="0" >Select</option>
-                            <option value="1">Songs</option>
-                            <option value="2">Artist</option>
-                            <option value="3">Album</option>
-                            <option value="4">MusicVideo</option>
+                            <option selected value="song">Songs</option>
+                            <option value="musicArtist">Artist</option>
+                            <option value="album">Album</option>
+                            <option value="musicVideo">MusicVideo</option>
                 </select>
                     </div>
                 </div>
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="autocomplete">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btn-search">Search</button>
                 </form>
             </nav>
         </div>
     </header>
     <main class="container">
-        <div class="d-flex flex-wrap justify-content-center mx-auto col-md-12" id="list-search"></div>
+        <div class="d-flex flex-wrap justify-content-center bg-warning my-5 mx-auto col-md-8">
+            <div>
+                <label for="opt-in">Country</label>
+                <select name="my-select" id="Country">
+                <option value="CA">Canada</option>
+                <option value="BR">Brasil</option>
+                <option value="Ecuador">Ecuador</option>
+              </select>
+            </div>
+            <div>
+
+                <label for="opt-in">Explicite Content </label>
+                <select name="my-select" id="Explicit">
+                <option value="Yes">Yes</option>
+                <option value="No">NO</option>
+              </select>
+            </div>
+            <div>
+
+                <label for="opt-in">Limit</label>
+                <select name="my-select" id="fruit">
+                <option value="opt1">Apples</option>
+                <option value="opt2">Grapes</option>
+                <option value="opt3">Pears</option>
+              </select>
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center mx-auto col-md-12" id="list-search">
+            <aside>
+                <div>
+                    <h1>Favorites</h1>
+                </div>
+
+            </aside>
+        </div>
+        <aside>
+            <div>
+                <h1>Favorites</h1>
+            </div>
+
+        </aside>
     </main>
+    <section>
+        <aside>
+            <div>
+                <h1>Favorites</h1>
+            </div>
+
+        </aside>
+    </section>
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="assets/js/Songs.js"></script>
-    <script src="assets/js/Artist.js"></script>
-    <script src="assets/js/album.js"></script>
-    <script src="assets/js/video.js"></script>
-    <!-- <script src="assets/js/main.js"></script> -->
-    <script src="prueba.js"></script>
+    <script src="assets/js/Search.js"></script>
+    <!-- <script src="assets/js/class/Artist.js"></script> -->
+    <!-- <script src="assets/js/class/Song.js"></script>
+    <script src="assets/js/class/Video.js"></script>
+    <script src="assets/js/class/Album.js"></script> -->
+    <script src="assets/js/apiItunes.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- <script src="prueba2.js"></script> -->
+    <!-- <script src="prueba.js"></script> -->
 
 </body>
 
