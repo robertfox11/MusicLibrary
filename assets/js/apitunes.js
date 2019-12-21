@@ -1,5 +1,5 @@
 // Function ajax
-function getDataItunes(term, entity, country, explicit, callback) {
+function getDataItunes(term, entity, country, explicit, limit, callback) {
     var _url = 'https://itunes.apple.com/search?';
 
     $.ajax({
@@ -10,7 +10,7 @@ function getDataItunes(term, entity, country, explicit, callback) {
             "term": term,
             "entity": entity,
             "country": country,
-
+            "limit": limit,
             "explicit": explicit
         },
 

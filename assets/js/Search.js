@@ -2,10 +2,10 @@ function showResults(response, entity) {
     var results = $("#list-search");
     results.empty();
 
-    $.each(response, function(index, element) {
+    $.each(response, function(index) {
 
         if (entity == 'song') {
-            // console.log(response[index])
+            console.log(response[index])
             results.append(
                 '<div class="mb-4 card-desk col-md-4 text-center">' +
                 '<div class="mb-1 card shadow-sm">' +
@@ -16,16 +16,15 @@ function showResults(response, entity) {
                 '<img src=' + response[index].cover + ' class="imgSearch"></img>' +
                 '<ul class="list-group list-group-flush">' +
                 '<li class="list-group-item">' + response[index].nameSongs + '</li>' +
-                '<li class="list-group-item">Num Songs' + response[index].trackCount + '</li>' +
                 '<li class="list-group-item">' + response[index].releaseDate + '</li>' +
                 '</ul>' +
                 '<h4 class="mb-1">' + response[index].musicGner +
                 '</h4>' +
                 '<p>' + response[index].songLength + '</p>' +
-                '<p>' + response[index].linkSong + '</p>' +
                 '<h4 class="mb-1"> Price Music €' + response[index].songsPrice +
                 '</h4>' +
-                '<a  class="badge badge-primary" href=' + response[index].linkSong + ' ' + 'target=_blank>link</a>' +
+                '<a  class="badge badge-primary my-auto" href=' + response[index].linkSong + ' ' + 'target=_blank>link</a>' +
+                '<button class="btn btn-primary" id="btn" type="submit">Añadir</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -48,6 +47,7 @@ function showResults(response, entity) {
                 '<h4 class="mb-1">' + response[index].musicGener +
                 '</h4>' +
                 '<a  class="badge badge-primary" data-id=' + response[index].artistId + ' ' + 'href=' + response[index].linkGener + ' target=_blank>link</a>' +
+                '<button class="btn btn-primary" type="submit">Button</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -78,6 +78,7 @@ function showResults(response, entity) {
                 '<p> number songs ' + response[index].numSongs + '</p>' +
                 '<h4 class="mb-1"> Price Album €' + response[index].priceAlbum +
                 '</h4>' +
+                '<button class="btn btn-primary" type="submit">Button</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -112,6 +113,7 @@ function showResults(response, entity) {
                 '<source controls id=' + 'video src=' + response[index].clipVideo + ' ' + 'type="video/m4v">' +
                 '<source controls id=' + 'video src=' + response[index].clipVideo + ' ' + 'type="video/webm">' +
                 '</video>' +
+                '<button class="btn btn-primary" type="submit">Button</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +

@@ -11,3 +11,16 @@
     border: 1px solid cadetblue;
     border-radius: 7px;
 }
+
+#favorites {
+    float: right;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #555;
+    background: #428bca;
+    position: relative;
+}
+
+#list-search {
+    float: left;
+}

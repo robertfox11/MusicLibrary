@@ -39,47 +39,54 @@
     </header>
     <main class="container">
         <div class="d-flex flex-wrap justify-content-center bg-warning my-5 mx-auto col-md-8">
-            <div>
+            <div class="card-header mx-auto">
                 <label for="opt-in">Country</label>
-                <select name="my-select" id="Country">
-                <option value="CA">Canada</option>
+                <select name="my-select" id="Country" class="custom-select ">
+                <!-- <option value="CA">Canada</option>
                 <option value="BR">Brasil</option>
-                <option value="Ecuador">Ecuador</option>
+                <option value="Ecuador">Ecuador</option> -->
               </select>
             </div>
-            <div>
+            <div class="card-header mx-auto">
                 <label for="opt-in">Explicite Content </label>
-                <select name="my-select" id="Explicit">
+                <select name="my-select" id="Explicit" class="custom-select ">
                 <option value="Yes">Yes</option>
-                <option value="No">NO</option>
+                <option value="No">No</option>
               </select>
             </div>
-            <div>
+            <div class="card-header mx-auto">
                 <label for="opt-in">Limit</label>
-                <select name="my-select" id="fruit">
-                <option value="opt1">Apples</option>
-                <option value="opt2">Grapes</option>
-                <option value="opt3">Pears</option>
+                <select name="my-select" id="limit" class="custom-select ">
               </select>
             </div>
         </div>
 
         <div class="d-flex flex-wrap justify-content-center mx-auto col-md-12" id="list-search">
-            <aside>
-                <div>
-                    <h1>Favorites</h1>
-                </div>
+            <aside id="favorites">
 
             </aside>
         </div>
+
+
     </main>
+    <footer id="footer" class=" container">
+        <div class=" col-md-12 py-5 center">
+            <!-- Facebook -->
+
+        </div>
+        <!-- Copyright -->
+        <div class="bg-dark text-center py-3 w-100">© 2019 Copyright:
+            <a href="https://www.linkedin.com/in/robert-salazar-programador-web-en-java-junior/" target="_blank" class="white"> Robert Salazar </a>
+        </div>
+    </footer>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="assets/js/Search.js"></script>
     <script src="assets/js/class/Artist.js"></script>
     <script src="assets/js/class/Song.js"></script>
     <script src="assets/js/class/Video.js"></script>
     <script src="assets/js/class/Album.js"></script>
-    <script src="assets/js/apiItunes.js"></script>
+    <script src="assets/js/apitunes.js"></script>
+    <script src="assets/js/apiCountry.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/entity.js"></script>
     <!-- <script src="prueba2.js"></script> -->
