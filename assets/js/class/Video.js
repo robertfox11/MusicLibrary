@@ -6,10 +6,16 @@ class Video {
         this.artistName = artistName;
         this.songsPrice = songsPrice;
         this.releaseDate = releaseDate;
-        this.songLength = songLength;
+        this.songLength = this.getMinutes(songLength);
         this.musicGner = musicGner;
         this.clipVideo = clipVideo;
         this.linkMusiVideo = linkMusiVideo;
+    }
+    getMinutes(val) {
+        var min = Math.floor(val / 60000);
+        var sec = ((val % 60000) / 1000).toFixed(0);
+        return min + ":" + (sec < 10 ? '0' : '') + sec;
+
     }
 
 }

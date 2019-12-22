@@ -5,7 +5,7 @@ function getCountry(callback) {
         type: "GET",
         success: function(response) {
             const results = response;
-            console.log(results)
+            // console.log(results)
             if (callback) callback(null, results);
 
         },
@@ -19,7 +19,7 @@ getCountry((function(err, results) {
         console.log('There was an error');
     } else {
         $.each(results, function(index) {
-            console.log(results[index])
+            // console.log(results[index])
             $('#Country').append('<option value="' + results[index].a2 + '">' + results[index].a2 + ' - ' + results[index].name + '</option>');
             $('#Country').on('change', function() {
                 $(this).attr('value');

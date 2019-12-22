@@ -100,7 +100,7 @@ function showResults(response, entity) {
                 '<img src=' + response[index].cover + ' class="imgSearch"></img>' +
                 '<ul class="list-group list-group-flush">' +
                 '<li class="list-group-item">' + response[index].nameSongs + '</li>' +
-                '<li class="list-group-item">Time Songs' + response[index].songLength + '</li>' +
+                '<li class="list-group-item">Time Songs ' + response[index].songLength + '</li>' +
                 '<li class="list-group-item">' + response[index].releaseDate + '</li>' +
                 '</ul>' +
                 '<h4 class="mb-1">' + response[index].musicGner +

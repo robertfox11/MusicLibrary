@@ -15,12 +15,18 @@
 #favorites {
     float: right;
     width: 100px;
-    height: 100px;
+    height: 270px;
     border: 3px solid #555;
     background: #428bca;
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: stretch;
 }
 
-#list-search {
+
+/* #list-search {
     float: left;
-}
+} */
