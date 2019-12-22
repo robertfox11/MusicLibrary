@@ -6,7 +6,8 @@ $("#list-search").on("click", function(e) {
         console.log(select)
 
         saveProductLocalStorage(select)
-        $("#favorites").append('<h4>' + select + '</h4>')
+        $("#favorites").append('<h4 id="little">' + select + '</h4>')
+
 
     }
 });
@@ -32,4 +33,21 @@ function getProductLocalStorage() {
         // console.log(productLS1);
     }
     return productLS1;
+}
+
+function removeProductLocalStorage(productoID) {
+    let productsLS2;
+    productsLS2 = this.getProductLocalStorage();
+
+    productsLS2.forEach(function(productoLS, index) {
+        if (productoLS.id === productoID) {
+            productsLS2.splice(index, 1);
+        }
+    });
+    //actualizamos localstorge
+    localStorage.setItem('products', JSON.stringify(productsLS2));
+}
+
+function vaciarLocalStorage(para) {
+    localStorage.clear(para);
 }
