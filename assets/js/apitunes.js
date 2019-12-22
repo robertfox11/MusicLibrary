@@ -1,7 +1,6 @@
-// Function ajax
+// Function ajax con los parametros correspondiente
 function getDataItunes(term, entity, country, explicit, limit, callback) {
     var _url = 'https://itunes.apple.com/search?';
-
     $.ajax({
         type: 'GET',
         dataType: 'jsonp',

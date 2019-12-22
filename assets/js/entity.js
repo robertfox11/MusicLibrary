@@ -3,7 +3,7 @@ function arrayClass(response, entity) {
     switch (entity) {
         case 'song':
             $.each(response, function(index, element) {
-                array.push(new Song(element.artworkUrl100, element.trackName, element.artistName, element.trackPrice, element.releaseDate, element.trackTimeMillis, element.primaryGenreName, element.previewUrl, element.trackViewUrl))
+                array.push(new Song(element.trackId, element.artworkUrl100, element.trackName, element.artistName, element.trackPrice, element.releaseDate, element.trackTimeMillis, element.primaryGenreName, element.previewUrl, element.trackViewUrl))
             });
             break;
         case 'musicArtist':
@@ -20,13 +20,13 @@ function arrayClass(response, entity) {
             break;
         case 'musicVideo':
             $.each(response, function(index, element) {
-                var video = new Video(element.artworkUrl100, element.trackName, element.artistName, element.trackPrice, element.releaseDate, element.trackTimeMillis, element.primaryGenreName, element.previewUrl, element.trackViewUrl)
+                var video = new Video(element.trackId, element.artworkUrl100, element.trackName, element.artistName, element.trackPrice, element.releaseDate, element.trackTimeMillis, element.primaryGenreName, element.previewUrl, element.trackViewUrl)
                 array.push(video)
             });
             break;
         default:
             $.each(response, function(index, element) {
-                array.push(new Song(element.artworkUrl100, element.trackName, element.artistName, element.trackPrice, element.releaseDate, element.trackTimeMillis, element.primaryGenreName, element.previewUrl, element.trackViewUrl))
+                array.push(new Song(element.trackId, element.artworkUrl100, element.trackName, element.artistName, element.trackPrice, element.releaseDate, element.trackTimeMillis, element.primaryGenreName, element.previewUrl, element.trackViewUrl))
             });
             break;
     }

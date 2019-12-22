@@ -10,12 +10,12 @@ function showResults(response, entity) {
                 '<div class="mb-4 card-desk col-md-4 text-center">' +
                 '<div class="mb-1 card shadow-sm">' +
                 '<div class="card-header">' +
-                '<h2 class="my-0 font-weight-bold">' + response[index].artistName + '</h2>' +
+                '<h2 class="my-0 font-weight-bold" >' + response[index].artistName + '</h2>' +
                 '</div>' +
                 '<div class="card-body">' +
                 '<img src=' + response[index].cover + ' class="imgSearch"></img>' +
                 '<ul class="list-group list-group-flush">' +
-                '<li class="list-group-item">' + response[index].nameSongs + '</li>' +
+                '<li class="list-group-item" id=artist' + response[index].id + ' ' + '>' + response[index].nameSongs + '</li>' +
                 '<li class="list-group-item">' + response[index].releaseDate + '</li>' +
                 '</ul>' +
                 '<h4 class="mb-1">' + response[index].musicGner +
@@ -24,7 +24,7 @@ function showResults(response, entity) {
                 '<h4 class="mb-1"> Price Music €' + response[index].songsPrice +
                 '</h4>' +
                 '<a  class="badge badge-primary my-auto" href=' + response[index].linkSong + ' ' + 'target=_blank>link</a>' +
-                '<button class="btn btn-primary" id="btn" type="submit">Añadir</button>' +
+                '<button class="btn btn-primary" id=' + response[index].id + ' ' + 'type="submit">Add</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -47,7 +47,6 @@ function showResults(response, entity) {
                 '<h4 class="mb-1">' + response[index].musicGener +
                 '</h4>' +
                 '<a  class="badge badge-primary" data-id=' + response[index].artistId + ' ' + 'href=' + response[index].linkGener + ' target=_blank>link</a>' +
-                '<button class="btn btn-primary" type="submit">Button</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -78,7 +77,6 @@ function showResults(response, entity) {
                 '<p> number songs ' + response[index].numSongs + '</p>' +
                 '<h4 class="mb-1"> Price Album €' + response[index].priceAlbum +
                 '</h4>' +
-                '<button class="btn btn-primary" type="submit">Button</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -113,7 +111,7 @@ function showResults(response, entity) {
                 '<source controls id=' + 'video src=' + response[index].clipVideo + ' ' + 'type="video/m4v">' +
                 '<source controls id=' + 'video src=' + response[index].clipVideo + ' ' + 'type="video/webm">' +
                 '</video>' +
-                '<button class="btn btn-primary" type="submit">Button</button>' +
+                '<button class="btn btn-primary" id=' + response[index].id + ' ' + 'type="submit">Add</button>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +

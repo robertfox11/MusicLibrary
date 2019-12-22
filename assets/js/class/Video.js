@@ -1,6 +1,6 @@
 class Video {
-    constructor(cover, nameSongs, artistName, songsPrice, releaseDate, songLength, musicGner, clipVideo, linkMusiVideo) {
-
+    constructor(id, cover, nameSongs, artistName, songsPrice, releaseDate, songLength, musicGner, clipVideo, linkMusiVideo) {
+        this.id = id;
         this.cover = cover;
         this.nameSongs = nameSongs;
         this.artistName = artistName;

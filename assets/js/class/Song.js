@@ -1,5 +1,6 @@
 class Song {
-    constructor(cover, nameSongs, artistName, songsPrice, releaseDate, songLength, musicGner, audioSong, linkSong) {
+    constructor(id, cover, nameSongs, artistName, songsPrice, releaseDate, songLength, musicGner, audioSong, linkSong) {
+        this.id = id;
         this.cover = cover;
         this.nameSongs = nameSongs;
         this.artistName = artistName;
