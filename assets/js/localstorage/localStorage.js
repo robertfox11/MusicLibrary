@@ -6,9 +6,10 @@ $("#list-search").on("click", function(e) {
         console.log(select)
 
         saveProductLocalStorage(select)
-        $("#favorites").append('<h4 id="little">' + select + '</h4>')
-
-
+        $("#favorites").append(
+            '<h4 id="little">' + select + '</h4>' +
+            '<a href = ""  class= "borrar_producto btn btn-danger" data-id=' + select + '>x</a>'
+        );
     }
 });
 
